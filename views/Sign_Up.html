@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/style.css" type="text/css">
+<meta charset = "UTF-8" />
+<title>Sign up for Panes</title>
+<script>
+
+window.onload = function() {
+		if(window.location.href == 'http://localhost:8080/Signup/E')
+          document.getElementById('E').innerHTML = 'Email is already in use';
+}
+
+</script>
+
+</head>
+
+<body style="text-align: center;">
+
+<h3 class="form">Sign up for Panes!</h3>
+
+<div align='center'>
+<form id='thing' action='/auth/new' method='post'>
+<input class="form" type='text', id='name', name='name', placeholder='Enter your Full name(WILL be publicly visible)...' required autofocus>
+<input class="form" type='email', id='email', name='email', placeholder='Enter your email...' required>
+<input class="form" type='password', id='password', name='password', placeholder='Choose Your Password...' required>
+<input class="form" type='password', id='password_c', name='password_c', placeholder='Confirm Password...' required>
+<input class="form" id="button" type="button" value="Sign Up!">
+</form>
+</div>
+
+<p  class="form" id='E'></p>
+<a class="form" href="/login" >Already have an account? Login here!</a>
+
+<script>
+var Submit = function(){
+	console.log("button clicked");
+	if(document.getElementById('password').value !== document.getElementById('password_c').value) document.getElementById('E').innerHTML = 'Passwords are not Matching';
+	else if (document.getElementById('name').value.length > 50) document.getElementById('E').innerHTML = 'Invalid Username, Max 50 Charachters';
+	else if (document.getElementById('name').value == '' ||
+					document.getElementById('password').value == '' ||
+					document.getElementById('email').value == '') document.getElementById('E').innerHTML = 'All fields are necessary';
+	else document.getElementById('thing').submit();
+}
+
+document.getElementById('button').addEventListener('click',Submit);
+</script>
+
+<body>
+
+
+</html>

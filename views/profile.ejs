@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="/style.css" type="text/css">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<title> <%= name + " on Panes" %> </title>
+</head>
+
+<body style="background: skyblue;">
+
+	<div class="topnav">
+	  <a class="A_active">Panes</a>
+	  <a href="\" class="active">Front Page</a>
+	  <a id="registerLink" href="\Signup" class="inactive">Register</a>
+	  <a id="loginLink" href="\login" class="inactive">Login</a>
+	  <a id="paneLink" href="\my_profile" class="inactive">Your Pane</a>
+
+	  <a id="logoutLink" href="\" class="right">Logout</a>
+	</div>
+
+
+	<div class="content">
+		<div style="text-align: center">
+			<h2 style="font-size:42px">Welcome to <%= name %>'s Pane!</h2>
+		</div>
+
+		<div id="topRow" style="display:flex;">
+			<div style="flex:1;">
+						<img style="margin-left: 5%" src=" <%= "/"+ pro_pic +".jpg" %> " alt="Profile Photo" width="500" height="500">
+			</div>
+
+			<div>
+				<p style="flex:1;"><%= intro %></p>
+			</div>
+		</div>
+	</div>
+
+	<br><hr>
+
+	<div id="about" style="text-align: center; background: #CCC;">
+		<p style="padding-bottom: 5%; padding-top: 5%; font-size: 20px; margin-top: 0%; margin-bottom: 0%;"> <%= about %> </p>
+	</div>
+
+	<hr><br>
+
+	<div id="contact" style="text-align: center">
+		<p style="margin-top: 5%; font-size: 20px; margin-bottom: 10%"> <%= contact %> </p>
+	</div>
+
+	<script type="text/javascript" src="/topnav.js"></script>
+
+</body>
+</html>
