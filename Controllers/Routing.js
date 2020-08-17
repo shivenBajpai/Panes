@@ -58,4 +58,9 @@ module.exports = function(pane_data,app,dir){
     console.log('Request was made to:' + req.url);
   });
 
+  //404 page
+  app.get('*', function(req, res){
+    res.status(404).send('what???');
+  });
+
 };

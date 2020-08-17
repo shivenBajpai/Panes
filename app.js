@@ -12,6 +12,7 @@ var app = express();
 var port = 8080;
 
 //Configure Express
+app.use(express.static('public'))
 app.set('view engine', 'ejs' )
 app.use(bp.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -27,9 +28,6 @@ console.log("OK:Routing Online!");
 //Authentication
 auth(fs,app,__dirname + "\\Model\\auth.json");
 console.log("OK:Authentication Online!");
-
-//Configuring Static Files
-app.use(express.static('public'))
 
 //Opening Server
 app.listen(port, function(){
